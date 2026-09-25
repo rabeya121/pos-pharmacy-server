@@ -27,10 +27,17 @@ app.post("/api/medicines", async (req, res) => {
   }
 });
 
-app.get("/api/medicines", (req, res) => {
-  res.json({
-    message: "Medicines API is working",
-  });
+app.get("/api/medicines", async (req, res) => {
+  try {
+    const medicines = await Medicine.find();
+
+    res.json(medicines);
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to fetch medicines",
+      error: error.message,
+    });
+  }
 });
 
 mongoose
