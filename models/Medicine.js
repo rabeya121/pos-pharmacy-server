@@ -11,6 +11,16 @@ const medicineSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
+    strength: {
+      type: String,
+      required: true,
+    },
+
+    dosageForm: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
