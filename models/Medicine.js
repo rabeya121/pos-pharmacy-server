@@ -25,6 +25,10 @@ const medicineSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    manufacturer: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
