@@ -29,6 +29,11 @@ const medicineSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    barcode: {
+      type: String,
+      unique: true,
+      required: true,
+    },
   },
   {
     timestamps: true,
